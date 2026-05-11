@@ -13,7 +13,7 @@ function App() {
 
     return (
         <div className="app-container">
-            <h1>Image Carousel</h1>
+            <h1 className="app-title">Image Carousel</h1>
             {images.length > 0 && <Carousel images={images} />}
         </div>
     );
