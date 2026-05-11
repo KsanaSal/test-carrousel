@@ -1,0 +1,19 @@
+@use "../utils/variables" as *;
+
+body {
+    margin: 0;
+    color: var(--gray-medium-color);
+    background-color: var(--light-color);
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
+
+    & main {
+        padding-top: 60px;
+
+        @media screen and (min-width: $bp-desktop) {
+            padding-top: 100px;
+        }
+    }
+}
