@@ -1,17 +1,20 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "./assets/vite.svg";
-// import heroImg from "./assets/hero.png";
+import React, { useState, useEffect } from "react";
 import Carousel from "./components/Carrousel/Carrousel.jsx";
 import "./App.css";
 
 function App() {
-    // const [count, setCount] = useState(0);
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        fetch("https://picsum.photos/v2/list?limit=10")
+            .then((res) => res.json())
+            .then((data) => setImages(data));
+    }, []);
 
     return (
         <div className="app-container">
             <h1>Image Carousel</h1>
-            <Carousel />
+            {images.length > 0 && <Carousel images={images} />}
         </div>
     );
 }
